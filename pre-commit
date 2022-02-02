@@ -188,7 +188,7 @@ fi
 if [[ "$CHECK_R10K" != "disabled" ]] ; then
   if hash r10k >/dev/null 2>&1; then
     if [[ "$changedfile" = "Puppetfile" ]]; then
-          "${subhook_root}/r10k_syntax_check.sh"
+          "${subhook_root}/r10k_syntax_check.sh" "./$changedfile"
           RC=$?
           if [[ "$RC" -ne 0 ]]; then
                   failures=$((failures + 1))
