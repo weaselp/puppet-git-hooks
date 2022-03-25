@@ -199,6 +199,7 @@ if [[ "$CHECK_R10K" != "disabled" ]] ; then
   fi
 fi
 
+(cd "${git_root}" && rm -rf doc public .yardoc)
 #summary
 if [[ "$failures" -ne 0 ]]; then
     echo -e "$(tput setaf 1)Error: ${failures} subhooks failed. Please fix above errors.$(tput sgr0)"
